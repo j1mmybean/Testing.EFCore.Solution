@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="javascripts/jquery-3.6.1.min.js"></script>
+    <script src="javascripts/jquery-ui.min.js"></script>
+    <script type="text/javascript"></script>
+
+    <title></title>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <script>
+        var apiKey = "d89c726256033e0d84aca1adf4db3991";
+        var searchTitle = ''
+        var url = "https://api.themoviedb.org/3/discover/movie" +
+            "?api_key=" + apiKey +
+            "&language=zh-TW" +
+            "&sort_by=popularity.desc" +
+            "&include_adult=false" +
+            "&include_video=false" +
+            "&page=1" +
+            "&with_watch_monetization_types=flatrate";
+        function makeRequest() {
+            xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                var response = JSON.parse(this.responseText);
+                console.log(response);
+                $("#div1").html(this.responseText);
+				var s = "";
+				let imagePath = "https://image.tmdb.org/t/p/w500";
+                $.each(response.results, function (index, value) {
+					s += `<div>${value.title + value.original_title}<div>
+                          <div>${value.release_date}<div>
+						  <div>${value.overview}<div>
+                          <img src="${imagePath + value.backdrop_path}"/>`;
+                });
+                $("#div2").html(s);
+
+            };
+            xhr.open(
+                "GET", url, true
+            );
+            xhr.send();
+        }
+        makeRequest();
+    </script>
+</body>
+</html>

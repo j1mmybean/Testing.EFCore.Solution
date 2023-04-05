@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\ArticleController.cs" />
+    <Compile Remove="Controllers\CustomerController.cs" />
+    <Compile Remove="ViewModels\ArticleCreateVm.cs" />
+    <Compile Remove="ViewModels\ArticleSearchVm.cs" />
+    <Compile Remove="ViewModels\ArticleUpdateVm.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Article\List.cshtml" />
+    <Content Remove="Views\Customer\List.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\Testing.EFCore.BLL.csproj" />
+    <ProjectReference Include="..\Testing.EFCore.SqlDataLayer\Testing.EFCore.SqlDataLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\Article\" />
+    <Folder Include="Views\Customer\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\javascripts\jquery-3.6.1.js" />
+    <None Include="wwwroot\javascripts\jquery-3.6.1.min.js" />
+    <None Include="wwwroot\javascripts\jquery-ui.min.js" />
+  </ItemGroup>
+
+</Project>

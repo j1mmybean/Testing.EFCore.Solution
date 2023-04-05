@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Testing.EFCore.SqlDataLayer.EFCore.TMovie>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FMovieId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FMovieName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FMovieIntroduction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FMovieLevelId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FMovieOnDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FMovieOffDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FMovieLength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FMovieImagePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FMovieScore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FMovieImage)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FMovieId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FMovieName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FMovieIntroduction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FMovieLevelId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FMovieOnDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FMovieOffDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FMovieLength)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FMovieImagePath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FMovieScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FMovieImage)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
