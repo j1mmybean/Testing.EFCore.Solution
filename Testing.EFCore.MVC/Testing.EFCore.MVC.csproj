@@ -1,10 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>493c39bb-fb29-4a2a-b898-c3a3f5abeff1</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\Movie\**" />
+    <Content Remove="Views\Movie\**" />
+    <EmbeddedResource Remove="Views\Movie\**" />
+    <None Remove="Views\Movie\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Controllers\ArticleController.cs" />

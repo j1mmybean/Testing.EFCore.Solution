@@ -37,8 +37,4 @@
     <ProjectReference Include="..\ClassLibrary1\Testing.EFCore.BLL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="EFCore\" />
-  </ItemGroup>
-
 </Project>
